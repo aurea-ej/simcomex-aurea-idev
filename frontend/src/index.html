@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Simcomex</title>
+</head>
+<body>
+    <div id="corpo">
+    </div>
+    <template id="template-login">
+        <form id='login-form' class="center-box">
+            <img height="50px" src='img/logo.svg' />
+            <div class="input-wrapper">
+                <label for="login-email">Login</label>
+                <input type="email" name="email" id="login-email" placeholder="email@email.com" />
+            </div>
+            <div class="input-wrapper">
+                <label for="login-password">Password</label>
+                <input type="password" name="password" id="login-password" placeholder="********" />
+            </div>
+            <a href="#/esqueci">Esqueci minha senha</a>
+            <a href="#/registrar">Criar conta</a>
+            <button class="main-btn" type="submit">Entrar</button>
+        </form>
+    </template>
+    <template id="template-esqueci">
+        <h1>Recuperar senha</h1>
+    </template>
+    <template id="template-registrar">
+        <h1>Criar conta</h1>
+        <form id="form-resgitrar">
+            <div class="input-wrapper">
+                <label for="resgitrar_email">Email</label>
+                <input type="email" name="email" id="resgitrar_email" placeholder="********" />
+            </div>
+            <div class="input-wrapper">
+                <label for="resgitrar_password">Password</label>
+                <input type="password" name="password" id="resgitrar_password" placeholder="********" />
+            </div>
+            <button class="main-btn" type="submit">Entrar</button>
+        </form>
+    </template>
+    <template id="template-home">
+        <aside class="side-nav active">
+            <a href='#/home'>Início</a>
+            <a href='#/fatura'>Fatura</a>
+            <a href='#/home'>Pessoas</a>
+            <a href='#/ncm'>NCM</a>
+            <a href='#/home'>Tipo de despesa</a>
+            <button id="toggle-nav">abrir</button>
+        </aside>
+        <h1>Home</h1>
+    </template>
+    <template id="template-ncm">
+        <aside class="side-nav active">
+            <a href='#/home'>Início</a>
+            <a href='#/fatura'>Fatura</a>
+            <a href='#/home'>Pessoas</a>
+            <a href='#/ncm'>NCM</a>
+            <a href='#/home'>Tipo de despesa</a>
+            <button id="toggle-nav">abrir</button>
+        </aside>
+        <h1>NCM</h1>
+        <form id="ncm-form">
+            <div class="row">
+                <div class="input-wrapper">
+                    <label for="ncm_ncm">NCM</label>
+                    <input type="text" name="ncm" id="ncm_ncm" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="ncm_cint">COD INT</label>
+                    <input type="text" name="cint" id="ncm_cint" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="ncm_ncint">NCM COD INT</label>
+                    <input type="text" name="ncint" id="ncm_ncint" placeholder="XXXXX" />
+                </div>
+            </div>
+            
+            <div class="input-wrapper">
+                <label for="ncm_desc">Descrição</label>
+                <input type="text" name="descricao" id="ncm_desc" placeholder="XXXXX" />
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    <label for="ncm_cest">CEST</label>
+                    <input type="text" name="cest" id="ncm_cest" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="ncm_cior">CST ICMS ORIGEM</label>
+                    <input type="text" name="cior" id="ncm_cior" placeholder="XXXXX" />
+                </div>
+            </div>
+            <div class="input-wrapper">
+                <label for="ncm_cdesc">CEST Descrição</label>
+                <input type="text" name="cdesc" id="ncm_cdesc" placeholder="XXXXX" />
+            </div>
+            <button class="inv-btn" type="submit">Salvar</button>
+        </form>
+    </template>
+    <template id="template-fatura">
+        <aside class="side-nav active">
+            <a href='#/home'>Início</a>
+            <a href='#/fatura'>Fatura</a>
+            <a href='#/home'>Pessoas</a>
+            <a href='#/ncm'>NCM</a>
+            <a href='#/home'>Tipo de despesa</a>
+            <button id="toggle-nav">abrir</button>
+        </aside>
+        <h1>Fatura</h1>
+        <form id="fatura-form">
+            <div class="row">
+                <div class="input-wrapper">
+                    <label for="fat_proc">Processo de importação</label>
+                    <input type="text" name="ncm" id="fat_proc" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_num">Número da fatura</label>
+                    <input type="text" name="cint" id="fat_num" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_dinum">Número da DI</label>
+                    <input type="text" name="ncint" id="fat_dinum" placeholder="XXXXX" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-wrapper">
+                    <label for="fat_imp">Importador</label>
+                    <input type="text" name="cest" id="fat_imp" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_rti">Regime Tributário do Importador</label>
+                    <input type="text" name="cior" id="fat_rti" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_rta">Regime Tributário do Adquirente</label>
+                    <input type="text" name="cior" id="fat_rta" placeholder="XXXXX" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-wrapper">
+                    <label for="fat_simd">Data da simulação</label>
+                    <input type="text" name="cdesc" id="fat_simd" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_fatd">Data da fatura</label>
+                    <input type="text" name="cdesc" id="fat_fatd" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_frem">Modal do Frete</label>
+                    <input type="text" name="cdesc" id="fat_frem" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_navt">Tipo de Navegação</label>
+                    <input type="text" name="cdesc" id="fat_navt" placeholder="XXXXX" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-wrapper">
+                    <label for="fat_fobv">Valor FOB</label>
+                    <input type="text" name="cdesc" id="fat_fobv" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_fretev">Valor do  frete</label>
+                    <input type="text" name="cdesc" id="fat_fretev" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_segv">Valor do seguro</label>
+                    <input type="text" name="cdesc" id="fat_segv" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_acrv">Valor do acréscimo</label>
+                    <input type="text" name="cdesc" id="fat_acrv" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_vucvm">Moeda do VUCV</label>
+                    <input type="text" name="cdesc" id="fat_vucvm" placeholder="XXXXX" />
+                </div>
+                <div class="input-wrapper">
+                    <label for="fat_fretem">Moeda do frete</label>
+                    <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                </div>
+            </div>
+            <button class="inv-btn" type="submit">Salvar</button>
+        </form>
+    </template>
+</body>
+</html>
