@@ -30,6 +30,18 @@ a {
   color: var(--primary);
   text-decoration: none;
 }
+#corpo {
+  padding-left: 10vw;
+}
+.f1 {
+  flex: 1;
+}
+.f2 {
+  flex: 2;
+}
+.f3 {
+  flex: 3;
+}
 .center-box {
   display: flex;
   flex-direction: column;
@@ -84,12 +96,15 @@ a {
   color: var(--darkGray);
   font-weight: bold;
   margin-bottom: 4px;
+  width: 90%;
 }
-input {
+input,
+select {
   padding: 8px;
-  width: 80%;
+  width: 90%;
   border: 2px solid var(--lightGray);
   border-radius: var(--radius);
+  background-color: white;
   font-weight: bold;
   font-size: 1em;
   color: var(--darkGray);
@@ -139,12 +154,37 @@ input {
   transform: translateX(0px);
 }
 .inactive {
-  transform: translateX(-21vw);
+  transform: translateX(-15vw);
 }
 .row {
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+.tabela-main {
+  width: 95%;
+  border-spacing: 0px;
+  font-size: 1.2em;
+}
+.tabela-main th {
+  color: var(--primary);
+  font-weight: bolder;
+  background-color: var(--lightGray);
+}
+.tabela-main td {
+  color: var(--darkGray);
+  font-weight: bold;
+  background-color: white;
+}
+.tabela-main table,
+th,
+td {
+  border: 1px solid var(--darkGray);
+  padding: 8px;
+  text-align: center;
+}
+.tabela-main select {
+  border: none;
 }
