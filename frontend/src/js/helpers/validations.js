@@ -6,6 +6,10 @@ const emailValidation = (value) => {
 const passwordValidation = (value) => {
     return value.length >= 8 ? '' : 'Senha inválida'
 }
+const codigoInternoValidation = (value) => {
+    if(value === '') return 'O código é obrigatório'
+    return value >= 0 && value <= 99 ? '' : 'Código inválido'
+}
 
 /**
  * 
@@ -35,4 +39,4 @@ function validarCampo(validacoes, campo){
 }
 
 export default validarCampo
-export {emailValidation, passwordValidation}
+export {emailValidation, passwordValidation, codigoInternoValidation}
