@@ -69,35 +69,42 @@
             <div class="row">
                 <div class="input-wrapper">
                     <label for="ncm_ncm">NCM</label>
+                    <span class="error-text" id="error_ncm_ncm"></span>
                     <input type="text" name="ncm" id="ncm_ncm" placeholder="XXXXX" />
                 </div>
                 <div class="input-wrapper">
                     <label for="ncm_cint">COD INT</label>
-                    <input type="text" name="cint" id="ncm_cint" placeholder="XXXXX" />
+                    <span class="error-text" id="error_ncm_cint"></span>
+                    <input type="number" min="00" max="99" name="cint" id="ncm_cint" placeholder="XXXXX" />
                 </div>
                 <div class="input-wrapper">
                     <label for="ncm_ncint">NCM COD INT</label>
+                    <span class="error-text" id="error_ncm_ncint"></span>
                     <input type="text" name="ncint" id="ncm_ncint" placeholder="XXXXX" />
                 </div>
             </div>
             
             <div class="input-wrapper">
                 <label for="ncm_desc">Descrição</label>
+                <span class="error-text" id="error_ncm_desc"></span>
                 <input type="text" name="descricao" id="ncm_desc" placeholder="XXXXX" />
             </div>
 
             <div class="row">
                 <div class="input-wrapper">
                     <label for="ncm_cest">CEST</label>
+                    <span class="error-text" id="error_ncm_cest"></span>
                     <input type="text" name="cest" id="ncm_cest" placeholder="XXXXX" />
                 </div>
                 <div class="input-wrapper">
                     <label for="ncm_cior">CST ICMS ORIGEM</label>
+                    <span class="error-text" id="error_ncm_cior"></span>
                     <input type="text" name="cior" id="ncm_cior" placeholder="XXXXX" />
                 </div>
             </div>
             <div class="input-wrapper">
                 <label for="ncm_cdesc">CEST Descrição</label>
+                <span class="error-text" id="error_ncm_cdesc"></span>
                 <input type="text" name="cdesc" id="ncm_cdesc" placeholder="XXXXX" />
             </div>
             <button class="inv-btn" type="submit">Salvar</button>
