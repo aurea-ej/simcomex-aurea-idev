@@ -32,12 +32,14 @@
         <h1>Criar conta</h1>
         <form id="form-resgitrar">
             <div class="input-wrapper">
-                <label for="resgitrar_email">Email</label>
-                <input type="email" name="email" id="resgitrar_email" placeholder="********" />
+                <label for="registrar_email">Email</label>
+                <span class="error-text" id="error_registrar_email"></span>
+                <input type="email" name="email" id="registrar_email" placeholder="********" />
             </div>
             <div class="input-wrapper">
-                <label for="resgitrar_password">Password</label>
-                <input type="password" name="password" id="resgitrar_password" placeholder="********" />
+                <label for="registrar_password">Password</label>
+                <span class="error-text" id="error_registrar_password"></span>
+                <input type="password" name="password" id="registrar_password" placeholder="********" />
             </div>
             <button class="main-btn" type="submit">Entrar</button>
         </form>
