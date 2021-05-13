@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react'
+import { Link } from "react-router-dom";
 import firebase from "firebase/app";
-import firebaseConfig from './FIREBASECONFIG.js'
+import firebaseConfig from '../../FIREBASECONFIG.js'
 import 'firebase/database'
 import 'firebase/firestore'
 import './app.css'
@@ -149,8 +150,10 @@ function App() {
         <div className='button' >
             <a onClick={sendProducts}>Enviar</a>
         </div>
+        <div className='button' >
+            <Link to='/Fatura'>Cadastrar Fatura</Link>
+        </div>
 
-      
     </div>
 
   );

@@ -1,4 +1,4 @@
-import firebase from 'firebase';
+// import firebase from 'firebase';
 import { firebaseConfig } from './configs'
 import {home} from './pages/home'
 import {loginPage} from './pages/login'
@@ -7,7 +7,16 @@ import {fatura} from './pages/fatura'
 import '../css/index.css'
 import { registrar } from './pages/registrar';
 
-const firebaseInit = firebase.initializeApp(firebaseConfig);
+import firebase from "firebase/app";
+import 'firebase/database'
+import 'firebase/firestore'
+
+function firebaseInit () {
+
+    if(!firebase.apps.length) 
+        firebase.initializeApp(firebaseConfig)
+
+}
 
 function pageSelector() {
     const address = location.hash.split('/')
@@ -19,7 +28,7 @@ function pageSelector() {
 }
 
 function init() {
-    // firebaseInit()
+    firebaseInit()
     const target = pageSelector()
     trocaPagina(target)
 }
