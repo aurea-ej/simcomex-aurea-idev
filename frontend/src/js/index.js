@@ -10,6 +10,7 @@ import { registrar } from './pages/registrar';
 import firebase from "firebase/app";
 import 'firebase/database'
 import 'firebase/firestore'
+import modalToggle from './helpers/modal'
 
 function firebaseInit () {
 
@@ -53,6 +54,7 @@ function trocaPagina(pagina) {
         ncm()
     } else if (pagina === 'fatura') {
         fatura()
+        modalToggle()
     } else if (pagina === 'registrar') {
         registrar()
     }

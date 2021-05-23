@@ -47,23 +47,33 @@
     </template>
     <template id="template-home">
         <aside class="side-nav inactive">
-            <a href='#/home'>Início</a>
-            <a href='#/fatura'>Fatura</a>
-            <a href='#/home'>Pessoas</a>
-            <a href='#/ncm'>NCM</a>
-            <a href='#/home'>Tipo de despesa</a>
             <button id="toggle-nav">abrir</button>
+            <div id='open-content'>
+                <a href='#/home'>Início</a>
+                <a href='#/fatura'>Fatura</a>
+                <a href='#/home'>Pessoas</a>
+                <a href='#/ncm'>NCM</a>
+                <a href='#/home'>Tipo de despesa</a>
+            </div>
+            <div id='closed-content'>
+                <p>Fechado</p>
+            </div>
         </aside>
         <h1>Home</h1>
     </template>
     <template id="template-ncm">
         <aside class="side-nav inactive">
-            <a href='#/home'>Início</a>
-            <a href='#/fatura'>Fatura</a>
-            <a href='#/home'>Pessoas</a>
-            <a href='#/ncm'>NCM</a>
-            <a href='#/home'>Tipo de despesa</a>
             <button id="toggle-nav">abrir</button>
+            <div id='open-content'>
+                <a href='#/home'>Início</a>
+                <a href='#/fatura'>Fatura</a>
+                <a href='#/home'>Pessoas</a>
+                <a href='#/ncm'>NCM</a>
+                <a href='#/home'>Tipo de despesa</a>
+            </div>
+            <div id='closed-content'>
+                <p>Fechado</p>
+            </div>
         </aside>
         <h1>NCM</h1>
         <form id="ncm-form">
@@ -372,17 +382,78 @@
                 </div>
             </div>
             <button class="inv-btn" type="submit">Salvar</button>
+            <button id="open-modal" type="button">Open modal</button>
         </form>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <button id="close-modal">&times;</button>
+              <h1>Novo item</h1>
+              <form>
+                  <div class="row">
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper"></div>
+                  </div>
+                  <div class="row">
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="fat_fretem">Moeda do frete</label>
+                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    </div>
+                  </div>
+              </form>
+            </div>
+          
+          </div>
     </template>
     <template id='template-fatura-tabela'>
         <aside class="side-nav inactive">
+            <button id="toggle-nav">abrir</button>
             <div id='open-content'>
                 <a href='#/home'>Início</a>
                 <a href='#/fatura'>Fatura</a>
                 <a href='#/home'>Pessoas</a>
                 <a href='#/ncm'>NCM</a>
                 <a href='#/home'>Tipo de despesa</a>
-                <button id="toggle-nav">abrir</button>
             </div>
             <div id='closed-content'>
                 <p>Fechado</p>
