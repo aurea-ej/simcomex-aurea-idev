@@ -1,7 +1,7 @@
-function modalToggle(){
+function modalToggle(modalId = 'myModal'){
     const openBtn = document.querySelector('#open-modal')
     const closeBtn = document.querySelector('#close-modal')
-    const modal = document.querySelector('#myModal')
+    const modal = document.querySelector(`#${modalId}`)
     openBtn.addEventListener('click', () => {
         modal.style.display = 'block'
     })

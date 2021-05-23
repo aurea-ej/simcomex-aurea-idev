@@ -182,6 +182,11 @@ select {
   align-items: flex-start;
   justify-content: space-between;
 }
+@media (max-width: 500px) {
+  .row {
+    flex-direction: column;
+  }
+}
 .tabela-main {
   width: 95%;
   border-spacing: 0px;
