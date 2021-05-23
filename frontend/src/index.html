@@ -45,7 +45,7 @@
         </form>
     </template>
     <template id="template-home">
-        <aside class="side-nav active">
+        <aside class="side-nav inactive">
             <a href='#/home'>Início</a>
             <a href='#/fatura'>Fatura</a>
             <a href='#/home'>Pessoas</a>
@@ -56,7 +56,7 @@
         <h1>Home</h1>
     </template>
     <template id="template-ncm">
-        <aside class="side-nav active">
+        <aside class="side-nav inactive">
             <a href='#/home'>Início</a>
             <a href='#/fatura'>Fatura</a>
             <a href='#/home'>Pessoas</a>
@@ -282,13 +282,18 @@
         </form>
     </template>
     <template id="template-fatura">
-        <aside class="side-nav active">
-            <a href='#/home'>Início</a>
-            <a href='#/fatura'>Fatura</a>
-            <a href='#/home'>Pessoas</a>
-            <a href='#/ncm'>NCM</a>
-            <a href='#/home'>Tipo de despesa</a>
+        <aside class="side-nav inactive">
             <button id="toggle-nav">abrir</button>
+            <div id='open-content'>
+                <a href='#/home'>Início</a>
+                <a href='#/fatura'>Fatura</a>
+                <a href='#/home'>Pessoas</a>
+                <a href='#/ncm'>NCM</a>
+                <a href='#/home'>Tipo de despesa</a>
+            </div>
+            <div id='closed-content'>
+                <p>Fechado</p>
+            </div>
         </aside>
         <h1>Fatura</h1>
         <form id="fatura-form">
@@ -367,6 +372,53 @@
             </div>
             <button class="inv-btn" type="submit">Salvar</button>
         </form>
+    </template>
+    <template id='template-fatura-tabela'>
+        <aside class="side-nav inactive">
+            <div id='open-content'>
+                <a href='#/home'>Início</a>
+                <a href='#/fatura'>Fatura</a>
+                <a href='#/home'>Pessoas</a>
+                <a href='#/ncm'>NCM</a>
+                <a href='#/home'>Tipo de despesa</a>
+                <button id="toggle-nav">abrir</button>
+            </div>
+            <div id='closed-content'>
+                <p>Fechado</p>
+            </div>
+        </aside>
+        <h1>Fatura</h1>
+        <table class="tabela-main">
+            <thead>
+                <tr>
+                    <th>AD</th>
+                    <th>Cod</th>
+                    <th>Cod Ref</th>
+                    <th>Descrição</th>
+                    <th>NCM</th>
+                    <th>Qt</th>
+                    <th>Un</th>
+                    <th>Peso Líquido (kg)</th>
+                    <th>INCOTERM</th>
+                    <th>Frete(U$)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                    <td>Num</td>
+                </tr>
+            </tbody>
+        </table>
+        <button class="inv-btn">Novo item</button>
     </template>
 </body>
 </html>
