@@ -21,9 +21,9 @@
                 <label for="login-password">Password</label>
                 <input type="password" name="password" id="login-password" placeholder="********" />
             </div>
-            <a href="#/esqueci">Esqueci minha senha</a>
-            <a href="#/registrar">Criar conta</a>
             <button class="main-btn" type="submit">Entrar</button>
+            <a href="#/esqueci">Esqueceu a senha?</a>
+            <a class="orange-text" href="#/registrar">Não tem uma conta? Crie agora!</a>
         </form>
     </template>
     <template id="template-esqueci">
@@ -33,6 +33,11 @@
         <h1>Criar conta</h1>
         <form id="form-resgitrar">
             <div class="input-wrapper">
+                <label for="registrar_nome">Nome</label>
+                <span class="error-text" id="error_registrar_nome"></span>
+                <input type="text" name="nome" id="registrar_nome" placeholder="********" />
+            </div>
+            <div class="input-wrapper">
                 <label for="registrar_email">Email</label>
                 <span class="error-text" id="error_registrar_email"></span>
                 <input type="email" name="email" id="registrar_email" placeholder="********" />
@@ -41,6 +46,21 @@
                 <label for="registrar_password">Password</label>
                 <span class="error-text" id="error_registrar_password"></span>
                 <input type="password" name="password" id="registrar_password" placeholder="********" />
+            </div>
+            <div class="input-wrapper">
+                <label for="registrar_telefone">Telefone</label>
+                <span class="error-text" id="error_registrar_telefone"></span>
+                <input type="text" name="telefone" id="registrar_telefone" placeholder="********" />
+            </div>
+            <div class="input-wrapper">
+                <label for="registrar_empresa">Nome da empresa</label>
+                <span class="error-text" id="error_registrar_empresa"></span>
+                <input type="text" name="empresa" id="registrar_empresa" placeholder="********" />
+            </div>
+            <div class="input-wrapper">
+                <label for="registrar_cnpj">CNPJ</label>
+                <span class="error-text" id="error_registrar_cnpj"></span>
+                <input type="text" name="cnpj" id="registrar_cnpj" placeholder="********" />
             </div>
             <button class="main-btn" type="submit">Entrar</button>
         </form>
@@ -306,140 +326,209 @@
                 <p>Fechado</p>
             </div>
         </aside>
-        <h1>Fatura</h1>
-        <form id="fatura-form">
-            <div class="row">
-                <div class="input-wrapper">
-                    <label for="fat_proc">Processo de importação</label>
-                    <input type="text" name="ncm" id="fat_proc" placeholder="XXXXX" />
+        <div id="corpo-wrapper">
+            <h1>Fatura</h1>
+            <form id="fatura-form">
+                <div class="row">
+                    <div class="input-wrapper f1">
+                        <label for="fat_proc">Processo de importação</label>
+                        <span class="error-text" id="error_fat_proc"></span>
+                        <input type="text" name="processo" id="fat_proc" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_num">Número da fatura</label>
+                        <span class="error-text" id="error_fat_num"></span>
+                        <input type="text" name="n_fatura" id="fat_num" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_dinum">Número da DI</label>
+                        <span class="error-text" id="error_fat_dinum"></span>
+                        <input type="text" name="n_di" id="fat_dinum" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_imp">Importação</label>
+                        <span class="error-text" id="error_fat_imp"></span>
+                        <input type="text" name="n_imp" id="fat_imp" placeholder="XXXXX" />
+                    </div>
                 </div>
-                <div class="input-wrapper">
-                    <label for="fat_num">Número da fatura</label>
-                    <input type="text" name="cint" id="fat_num" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_dinum">Número da DI</label>
-                    <input type="text" name="ncint" id="fat_dinum" placeholder="XXXXX" />
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="input-wrapper">
-                    <label for="fat_imp">Importador</label>
-                    <input type="text" name="cest" id="fat_imp" placeholder="XXXXX" />
+                <div class="row">
+                    <div class="input-wrapper f1">
+                        <label for="fat_impo">Importador</label>
+                        <span class="error-text" id="error_fat_impo"></span>
+                        <input type="text" name="n_impo" id="fat_impo" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_rti">Regime Tributário do Importador</label>
+                        <span class="error-text" id="error_fat_rti"></span>
+                        <input type="text" name="n_rti" id="fat_rti" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_rta">Regime Tributário do Adquirente</label>
+                        <span class="error-text" id="error_fat_rta"></span>
+                        <input type="text" name="n_rta" id="fat_rta" placeholder="XXXXX" />
+                    </div>
                 </div>
-                <div class="input-wrapper">
-                    <label for="fat_rti">Regime Tributário do Importador</label>
-                    <input type="text" name="cior" id="fat_rti" placeholder="XXXXX" />
+                <div class="row">
+                    <div class="input-wrapper f1">
+                        <label for="fat_simd">Data da simulação</label>
+                        <span class="error-text" id="error_fat_simd"></span>
+                        <input type="date" name="n_simd" id="fat_simd" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_fatd">Data da fatura</label>
+                        <span class="error-text" id="error_fat_fatd"></span>
+                        <input type="date" name="n_fatd" id="fat_fatd" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_frem">Modal do Frete</label>
+                        <span class="error-text" id="error_fat_frem"></span>
+                        <input type="text" name="n_frem" id="fat_frem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_navt">Tipo de Navegação</label>
+                        <span class="error-text" id="error_fat_navt"></span>
+                        <input type="text" name="n_navt" id="fat_navt" placeholder="XXXXX" />
+                    </div>
                 </div>
-                <div class="input-wrapper">
-                    <label for="fat_rta">Regime Tributário do Adquirente</label>
-                    <input type="text" name="cior" id="fat_rta" placeholder="XXXXX" />
+                <div class="row">
+                    <div class="input-wrapper f1">
+                        <label for="fat_fobv">Valor FOB</label>
+                        <span class="error-text" id="error_fat_fobv"></span>
+                        <input type="text" name="n_fobv" id="fat_fobv" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_fretev">Valor do  frete</label>
+                        <span class="error-text" id="error_fat_fretev"></span>
+                        <input type="text" name="n_fretev" id="fat_fretev" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_segv">Valor do  seguro</label>
+                        <span class="error-text" id="error_fat_segv"></span>
+                        <input type="text" name="n_segv" id="fat_segv" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_acrv">Valor do acréscimo</label>
+                        <span class="error-text" id="error_fat_acrv"></span>
+                        <input type="text" name="n_acrv" id="fat_acrv" placeholder="XXXXX" />
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-wrapper">
-                    <label for="fat_simd">Data da simulação</label>
-                    <input type="text" name="cdesc" id="fat_simd" placeholder="XXXXX" />
+                <div class="row">
+                    <div class="input-wrapper f1">
+                        <label for="fat_vucvm">Moeda do VUCV</label>
+                        <span class="error-text" id="error_fat_acrv"></span>
+                        <input type="text" name="n_vucvm" id="fat_vucvm" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_fremo">Moeda do frete</label>
+                        <span class="error-text" id="error_fat_fremo"></span>
+                        <input type="text" name="n_frem" id="fat_fremo" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_segm">Moeda do seguro</label>
+                        <span class="error-text" id="error_fat_segm"></span>
+                        <input type="text" name="n_segm" id="fat_segm" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_acrm">Moeda do acréscimo</label>
+                        <span class="error-text" id="error_fat_acrm"></span>
+                        <input type="text" name="n_segm" id="fat_acrm" placeholder="XXXXX" />
+                    </div>
                 </div>
-                <div class="input-wrapper">
-                    <label for="fat_fatd">Data da fatura</label>
-                    <input type="text" name="cdesc" id="fat_fatd" placeholder="XXXXX" />
+                <div class="row">
+                    <div class="input-wrapper f1">
+                        <label for="fat_tvucvm">Taxa Moeda do VUCV</label>
+                        <span class="error-text" id="error_fat_tvucvm"></span>
+                        <input type="text" name="n_tvucvm" id="fat_tvucvm" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_tfrem">Taxa Moeda do frete</label>
+                        <span class="error-text" id="error_fat_tfrem"></span>
+                        <input type="text" name="n_tfrem" id="fat_tfrem" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_tsegm">Taxa Moeda do seguro</label>
+                        <span class="error-text" id="error_fat_tsegm"></span>
+                        <input type="text" name="n_tsegm" id="fat_tsegm" placeholder="XXXXX" />
+                    </div>
+                    <div class="input-wrapper f1">
+                        <label for="fat_tacrm">Taxa Moeda do acréscimo</label>
+                        <span class="error-text" id="error_fat_tacrm"></span>
+                        <input type="text" name="n_segm" id="fat_tacrm" placeholder="XXXXX" />
+                    </div>
                 </div>
-                <div class="input-wrapper">
-                    <label for="fat_frem">Modal do Frete</label>
-                    <input type="text" name="cdesc" id="fat_frem" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_navt">Tipo de Navegação</label>
-                    <input type="text" name="cdesc" id="fat_navt" placeholder="XXXXX" />
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-wrapper">
-                    <label for="fat_fobv">Valor FOB</label>
-                    <input type="text" name="cdesc" id="fat_fobv" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_fretev">Valor do  frete</label>
-                    <input type="text" name="cdesc" id="fat_fretev" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_segv">Valor do seguro</label>
-                    <input type="text" name="cdesc" id="fat_segv" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_acrv">Valor do acréscimo</label>
-                    <input type="text" name="cdesc" id="fat_acrv" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_vucvm">Moeda do VUCV</label>
-                    <input type="text" name="cdesc" id="fat_vucvm" placeholder="XXXXX" />
-                </div>
-                <div class="input-wrapper">
-                    <label for="fat_fretem">Moeda do frete</label>
-                    <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
-                </div>
-            </div>
-            <button class="inv-btn" type="submit">Salvar</button>
-            <button id="open-modal" type="button">Open modal</button>
-        </form>
+                <button class="inv-btn" type="submit">Salvar</button>
+                <button id="open-modal" type="button">Open modal</button>
+            </form>
+        </div>
         <div id="myModal" class="modal">
             <div class="modal-content">
               <button id="close-modal">&times;</button>
               <h1>Novo item</h1>
-              <form>
+              <form id="modal-form">
                   <div class="row">
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_cod">Código</label>
+                        <span class="error-text" id="error_fatm_cod"></span>
+                        <input type="text" name="n_frem" id="fatm_cod" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_fref">Referência Fábrica</label>
+                        <span class="error-text" id="error_fatm_fref"></span>
+                        <input type="text" name="n_frem" id="fatm_fref" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_desc">Descrição</label>
+                        <span class="error-text" id="error_fatm_desc"></span>
+                        <input type="text" name="n_frem" id="fatm_desc" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper"></div>
+                    <div class="input-wrapper f1"></div>
                   </div>
                   <div class="row">
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_ncmc">NCM Código</label>
+                        <span class="error-text" id="error_fatm_ncmc"></span>
+                        <input type="text" name="n_frem" id="fatm_ncmc" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_ncmd">NCM Descrição</label>
+                        <span class="error-text" id="error_fatm_ncmd"></span>
+                        <input type="text" name="n_frem" id="fatm_ncmd" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_quan">Quantidade</label>
+                        <span class="error-text" id="error_fatm_quan"></span>
+                        <input type="text" name="n_frem" id="fatm_quan" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_un">Unidade</label>
+                        <span class="error-text" id="error_fatm_un"></span>
+                        <input type="text" name="n_frem" id="fatm_un" placeholder="XXXXX" />
                     </div>
                   </div>
                   <div class="row">
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_peso">Peso Líquido (kg)</label>
+                        <span class="error-text" id="error_fatm_peso"></span>
+                        <input type="text" name="n_frem" id="fatm_peso" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_vucv">VUCV (moeda)</label>
+                        <span class="error-text" id="error_fatm_vucv"></span>
+                        <input type="text" name="n_frem" id="fatm_vucv" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_vtot">Valor Total (moeda)</label>
+                        <span class="error-text" id="error_fatm_vtot"></span>
+                        <input type="text" name="n_frem" id="fatm_vtot" placeholder="XXXXX" />
                     </div>
-                    <div class="input-wrapper">
-                        <label for="fat_fretem">Moeda do frete</label>
-                        <input type="text" name="cdesc" id="fat_fretem" placeholder="XXXXX" />
+                    <div class="input-wrapper f1">
+                        <label for="fatm_inco">INCOTERM</label>
+                        <span class="error-text" id="error_fatm_inco"></span>
+                        <input type="text" name="n_frem" id="fatm_inco" placeholder="XXXXX" />
                     </div>
-                  </div>
+                </div>
+                <button class="inv-btn" type="submit">Salvar</button>
               </form>
             </div>
           
